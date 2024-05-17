@@ -412,6 +412,8 @@ const addClass = function () {
 addClass()
 // [EXTRA] JS Avanzato
 
+console.log('-----------------------------------------------ESERCIZI EXTRA---------------------------------------')
+
 /* ESERCIZIO 27
   Crea una funzione chiamata "halfTree" che riceve un numero come parametro e costruisce un mezzo albero di "*" (asterischi) dell'altezza fornita.
 
@@ -424,6 +426,19 @@ addClass()
 
 */
 
+const halfTree = function (numero) {
+  let tree = ''
+  for (let i = 0; i < numero; i++) {
+    tree += 'V'.repeat(i) + '\n'
+
+  }
+  console.log(tree)
+}
+
+halfTree(10)
+
+
+
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -435,6 +450,19 @@ addClass()
   *****
 
 */
+
+
+const tree = function (numero) {
+  let tree =''
+  for (let i = 1; i < numero; i++) {
+    tree += " ".repeat(numero - i) + "W".repeat((2 * i) - 1) + "\n"
+
+  }
+  console.log(tree)
+}
+
+tree(10)
+
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
