@@ -189,13 +189,47 @@ const rollTheDices = function (numero) {
 }
 
 console.log(rollTheDices(3))
+
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
 
+const howManyDays = function (dataInput) {
+
+  const dataSeparata = dataInput.split(/[-\/]/)
+
+  
+
+  const inputDate = {
+   day: dataSeparata[0],
+   month: dataSeparata[1],
+   year: dataSeparata[2]
+  }
+
+  console.log(inputDate)
+
+  const currentDate = new Date()
+  
+  const currentDay = currentDate.getDay()
+  const currentMonth = currentDate.getMonth()
+  const currentYear = currentDate.getFullYear()
+
+  how_manyYears = currentYear - inputDate.year
+  how_manyMonths = currentMonth - inputDate.month
+  how_manyDays = currentDay - inputDate.day
+  how_manyDays = ((how_manyYears * 365) + how_manyMonths) + how_manyDays
+
+  return how_manyDays
+}
+
+console.log(howManyDays('23-6-2000'))
+
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
+
+const isTodayMyBirthday = function () {}
+ 
 
 // Arrays & Oggetti
 
@@ -206,34 +240,74 @@ console.log(rollTheDices(3))
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
 
+
+const deleteProp = function (oggetto, proprietà) {
+  delete oggetto.proprietà
+  return oggetto
+}
+
+console.log(me, 'skills')
+
+
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
+
+const newestMovie = function() {
+  return movies.reduce((newest, movie) => newest.Year > movie.Year ? newest : movie);
+}
 
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
 */
 
+const countMovies = function () {
+  return movies.length
+}
+
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
 */
+
+const onlyTheYears = function () {
+  return movies.map(movie => movie.Year)
+}
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
 */
 
+const onlyInLastMillennium = function () {
+  return movies.filter(movie => parseInt(movie.Year) < 2000 && parseInt(movie.Year) > 1000)
+}
+
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
+
+const sumAllTheYears = function () {
+  return movies.reduce((sum, movie) => sum + parseInt(movie.Year), 0);
+}
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
 
+const searchByTitle = function (stringa) {
+  return movies.filter(movie => movie.Title === stringa)
+}
+
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
+
+const searchAndDivide = function (stringa) {
+  const match = movies.filter(movie => movie.Title.includes(stringa))
+  const unmatch = movies.filter(movie => !movie.Title.includes(stringa))
+
+  return {match, unmatch}
+}
 
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
