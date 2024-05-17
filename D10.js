@@ -557,3 +557,23 @@ const movies = [
       'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg',
   },
 ]
+
+
+
+console.log('-----------------------------------------------ESERCIZI SU ARRAY E OGGETTI-----------------------------------------')
+
+console.log(newestMovie());
+
+console.log(countMovies())
+
+console.log(onlyTheYears())
+
+console.log(onlyInLastMillennium())
+
+console.log(sumAllTheYears())
+
+console.log(searchByTitle('Greystoke: The Legend of Tarzan, Lord of the Apes'))
+
+console.log(searchAndDivide('Avengers'))
+
+console.log(removeIndex(0))
